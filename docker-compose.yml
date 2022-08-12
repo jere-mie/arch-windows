@@ -1,0 +1,9 @@
+version: "3"
+services:
+  arch:
+    container_name: arch-windows
+    image: archlinux:latest
+    volumes:
+      -  ./root:/root
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
