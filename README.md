@@ -1,9 +1,11 @@
 # arch-windows
+
 A handy Docker Compose configuration to run Arch Linux on Windows
 
 ## Pre Requesites
 
 You need to have [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/) (and [WSL](https://docs.microsoft.com/en-us/windows/wsl/install)) installed before using  
+
 ## How to Use
 
 ### Starting the Container
@@ -17,9 +19,11 @@ Simply run the `.\bash.bat` and a bash shell will open up.
 ### Stopping the Container
 
 Once you're done using the container, you can stop it by running `.\stop.bat`, You will now need to run `.\start.bat` to be able to open a shell again.
+
 ## Volumes
 
-There should be a `root` folder created after you run the `bash.bat` script. This folder corresponds to `/root` in the container. Since you're the root user in the container, this folder acts like your home directory (`~`).
+There should be a `~` folder and a `data` folder created after you run the `bash.bat` script. These folders correspond to `/root` and `/root/data` in the container, respectively. Since you're the root user in the container, the `~` folder (`/root` in the container) acts like your home directory.
+
 ## Next Steps
 
 You're probably going to want to update your packages so you can start installing stuff:
