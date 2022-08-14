@@ -4,7 +4,7 @@ services:
     container_name: arch-windows
     image: archlinux:latest
     volumes:
-      -  ./~:/root
       -  ./data:/root/data
     stdin_open: true # docker run -i
     tty: true        # docker run -t
+    working_dir: /root/data

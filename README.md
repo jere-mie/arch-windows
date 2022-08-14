@@ -1,28 +1,20 @@
 # arch-windows
 
-A handy Docker Compose configuration to run Arch Linux on Windows
+A handy Docker Compose configuration and scripts to run an Arch Linux shell on Windows
 
-## Pre Requesites
+## Prerequesites
 
 You need to have [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/) (and [WSL](https://docs.microsoft.com/en-us/windows/wsl/install)) installed before using  
 
 ## How to Use
 
-### Starting the Container
-
-Run `.\start.bat` to start the container. The container will now be running and you can `exec` into it.
-
 ### Opening a Shell
 
-Simply run the `.\bash.bat` and a bash shell will open up.
-
-### Stopping the Container
-
-Once you're done using the container, you can stop it by running `.\stop.bat`, You will now need to run `.\start.bat` to be able to open a shell again.
+Simply run the `.\bash.bat` and a bash shell will open up. Type `exit` from within the shell to go back into PowerShell/Command Prompt (depending on what you've done in the shell, you might need to type `exit` multiple times). It'll automatically stop the container when you do this, just make sure to allow enough time for it to gracefully stop.
 
 ## Volumes
 
-There should be a `~` folder and a `data` folder created after you run the `bash.bat` script. These folders correspond to `/root` and `/root/data` in the container, respectively. Since you're the root user in the container, the `~` folder (`/root` in the container) acts like your home directory.
+There should be a `data` folder created after you run the `bash.bat` script. This folder corresponds to `/root/data` in the container. Note: since you're the root user in the container, `/root` acts like your home directory (`~`), so `/root/data` is like `~/data`.
 
 ## Next Steps
 
@@ -40,4 +32,4 @@ pacman -S vim
 
 ## Clean Up/Deletion
 
-If you'd like to clean up/delete everything, simply run `docker compose down`.
+If you'd like to clean up/delete everything, simply run `docker compose down`. Note: the `data` folder won't be deleted even after you do this. If you'd like to delete it, you'll need to do so manually
